@@ -5,7 +5,6 @@ import br.com.brunood.products.dtos.ImageDTO;
 import br.com.brunood.products.exceptions.ProductNotFoundException;
 import br.com.brunood.products.repositories.ProductImagesRepository;
 import br.com.brunood.products.repositories.ProductRepository;
-import br.com.brunood.products.storage.R2Storage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +18,6 @@ public class GetProductByIdUseCase {
     private ProductRepository productRepository;
     @Autowired
     private ProductImagesRepository productImagesRepository;
-    @Autowired
-    private R2Storage r2Storage;
 
     public GetProductByIdUseCaseResponseDTO execute(Long productId) {
         var product = this.productRepository.findById(productId).orElseThrow(ProductNotFoundException::new);

@@ -21,7 +21,7 @@ server:
   port: 8083
   address: 0.0.0.0
 
-r2.apiurl:
-r2.secretkey:
-r2.bucket:
-r2.accesskey:
+r2.apiurl: 'https://06279b41f8d1d6cced2770e053fd6f7b.r2.cloudflarestorage.com/products-ms'
+r2.secretkey: 83eb1a4cbdf1c3328d02c9885b71b85411fc23fc30c08cf9004f56658387a586
+r2.bucket: products-ms
+r2.accesskey: 94ebfe40ae2fd61ea4ec67b18c28d998
