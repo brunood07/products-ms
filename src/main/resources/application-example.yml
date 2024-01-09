@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: 'products-ms'
+  flyway:
+    enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5434/products-db?user=admin&password=admin&createDatabaseIfNotExist=true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        globally_quoted_identifiers: 'true'
+        format_sql: 'true'
+        default_schema: ecomm_products
+    show-sql: 'false'
+    database-platform: 'org.hibernate.dialect.PostgreSQLDialect'
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8083
+  address: 0.0.0.0
+
+r2.apiurl:
+r2.secretkey:
+r2.bucket:
+r2.accesskey:

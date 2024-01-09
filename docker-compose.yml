@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: products_db
+    image: postgres
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=products-db
+    networks:
+      - spring-cloud-network
+
+  app:
+    container_name: products-ms
+    image: orders-app
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8080"
+    networks:
+      - spring-cloud-network
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/products-db
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+
+networks:
+  spring-cloud-network:
+    driver: bridge
