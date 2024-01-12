@@ -4,7 +4,7 @@ spring:
   flyway:
     enabled: true
   datasource:
-    url: jdbc:postgresql://localhost:5434/products-db?user=admin&password=admin&createDatabaseIfNotExist=true
+    url: jdbc:postgresql://172.27.0.4:5434/products-db?user=admin&password=admin&createDatabaseIfNotExist=true
   jpa:
     properties:
       hibernate:
